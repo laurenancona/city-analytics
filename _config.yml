@@ -1,0 +1,10 @@
+source: ./src
+destination: ./site
+
+# For running locally the path string should be empty.
+path: //laurenancona.com/dashboards/examples
+
+# Update this with your client ID.
+# https://developers.google.com/analytics/devguides/reporting/embed/v1/devguide#client-id
+client_id: 1045492784533-ql9o89eua66i30ir48m9dr54gsu4psgn.apps.googleusercontent.com
+
