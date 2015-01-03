@@ -436,3 +436,23 @@ a:hover {
   }
   100% {}
 }
+
+/**
+ * Single Metrics
+ */
+
+.Single {
+}
+.Single-metric {
+    font-size: 2em;
+    font-family: 'georgia', serif;
+    color: #444;
+    font-weight: 700;
+}
+.Single-label {
+    font-size: 1em;
+    font-family: 'georgia', serif;
+    text-transform: uppercase;
+    color: #444;
+}
+

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Basic Dashboard &mdash; Embed API Demos</title>
   <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet'>
-  <link rel="stylesheet" href="http://laurenancona.github.io/city-analytics/site/assets/css/main.css">
+  <link rel="stylesheet" href="../site/assets/css/main.css">
   
 
 </head>
@@ -26,6 +26,13 @@
     <div id="datachart"></div>
     <div class="Chart-controls" id="viewpicker"></div>
   </section>
+
+  <section class="Component Chart">
+    <h3 class="Chart-title">Users</h3>
+    <div class="Chart-subtitle">Last 7 Days</div>
+    <div id="Single-metric"></div>
+    <div class="Chart-controls" id="viewpicker"></div>
+  </section>
 </main>
 
 <!-- This code snippet loads the Embed API. Do not modify! -->
@@ -41,10 +48,10 @@
 <!-- This demo uses the viewpicker component, which uses JavaScript promises.
 The promise.js script below polyfills promises in older browsers that don't
 support them. -->
-<script src="http://laurenancona.com/dashboards/examples/site/assets/js/promise.js"></script>
-<script src="http://laurenancona.com/dashboards/examples/site/components/viewpicker.js"></script>
+<script src="../site/assets/js/promise.js"></script>
+<script src="../site/components/viewpicker.js"></script>
 
-<script src="http://laurenancona.com/dashboards/examples/site/components/active-users.js"></script>
+<script src="../site/components/active-users.js"></script>
 
 
 <script>
@@ -55,7 +62,7 @@ gapi.analytics.ready(function() {
    */
   gapi.analytics.auth.authorize({
     container: 'auth',
-    clientid: '1045492784533-ql9o89eua66i30ir48m9dr54gsu4psgn.apps.googleusercontent.com',
+    clientid: ' 1045492784533-ql9o89eua66i30ir48m9dr54gsu4psgn.apps.googleusercontent.com',
   });
 
   /**
@@ -82,7 +89,7 @@ gapi.analytics.ready(function() {
    */
   var dataChart = new gapi.analytics.googleCharts.DataChart({
     query: {
-//      'ids':'ga:1482401',    
+      'ids':'ids',
       'metrics': 'ga:sessions, ga:bounces',
       'dimensions': 'ga:date',
       'start-date': '7daysAgo',
