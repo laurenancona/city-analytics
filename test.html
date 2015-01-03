@@ -10,7 +10,7 @@
 <section id="auth-button"></section>
 <section id="view-selector"></section>
 <section id="timeline"></section>
-<section id='singleMetric'><span class="value">123</span> <span class="label">results</span></section>
+<section id='singleMetric'><span class="value">0</span> <span class="label">SESSIONS</span></section>
 
 <!-- Step 2: Load the library. -->
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -69,7 +69,7 @@ gapi.analytics.ready(function() {
       'metrics': 'ga:users',
       'start-date': '7daysAgo',
       'end-date': 'today',
-      'max-results': '1',
+      'max-results': '10',
     },
     chart: {
       type: 'LINE',
