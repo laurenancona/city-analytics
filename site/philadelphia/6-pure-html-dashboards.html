@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+  <title>Embed API Demos &mdash; Pure HTML Dashboards</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script src="assets/js/platform.js"></script>
+  <link rel="import" href="elements/ga-auth.html">
+  <link rel="import" href="elements/ga-dashboard.html">
+  <link rel="import" href="elements/ga-chart.html">
+  <link rel="import" href="elements/ga-viewpicker.html">
+  <link rel="import" href="elements/ga-datepicker.html">
+  
+
+</head>
+<body>
+
+  <header class="Banner">
+    <h1 class="Banner-title">
+      <a href="/">Phila.gov Analytics v0.0.1</a>
+      <em>Test Dashboards: HTML/Polymer Components</em>
+    </h1>
+    <ga-auth clientid="1045492784533-ql9o89eua66i30ir48m9dr54gsu4psgn.apps.googleusercontent.com"></gauth>
+  </header>
+
+  <ga-dashboard>
+<!-- DATE AND VIEW SELECTOR COMPONENTS -->
+    <section id="controls">
+      <ga-viewpicker></ga-viewpicker>
+      <ga-datepicker
+        startDate="365daysAgo"
+        endDate="1daysAgo">
+      </ga-datepicker>
+    </section>
+
+<!-- BEGIN CHARTS -->
+    <section id="charts">
+      <ga-chart          
+        title="Sessions per Month"
+        type="COLUMN"
+        metrics="ga:sessions"
+        dimensions="ga:nthMonth"
+        fields=rows,columnHeaders>
+      </ga-chart>
+
+      <ga-chart
+        title="Sessions (by country)"
+        type="GEO"
+        metrics="ga:sessions"
+        dimensions="ga:country">
+      </ga-chart>
+        
+<!--
+      <ga-chart
+        title="Sessions (local)"
+        type="GEO"
+        metrics="ga:sessions"
+        dimensions="ga:city">
+      </ga-chart>
+-->
+
+      <ga-chart
+        title="Top Browsers"
+        type="COLUMN"
+        metrics="ga:sessions"
+        dimensions="ga:browser"
+        sort="-ga:sessions"
+        maxResults="7">
+      </ga-chart>
+
+      <ga-chart
+        title="Top pages"
+        type="TABLE"
+        metrics="ga:sessions"
+        dimensions="ga:pagePath"
+        sort="-ga:sessions"
+        maxResults="10">
+      </ga-chart>
+      
+      <ga-chart
+        title="Mobile Devices"
+        type="TABLE"
+        metrics="ga:sessions"
+        dimensions="ga:pagePath"
+        sort="-ga:sessions"
+        maxResults="10">
+      </ga-chart>
+          
+      <ga-chart
+        title="OS / Hits"
+        type="COLUMN"
+        metrics="ga:hits"
+        dimensions="ga:operatingSystem"
+        sort="-ga:hits"
+        maxResults="5">
+      </ga-chart>    
+      <ga-chart
+        title="Medium"
+        type="PIE"
+        metrics="ga:sessions"
+        dimensions="ga:medium"
+        maxResults="10">
+      </ga-chart>        
+    </section>
+
+  </ga-dashboard>
+
+<footer class="SourceLink">
+  <a
+  href="../">
+  LSA updated 12.12.14 </a>
+  &nbsp;&#8594;
+</footer>
+
+</body>
+</html>
