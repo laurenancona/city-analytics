@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Multiple Views &mdash; Embed API Demos</title>
   <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet'>
-  <link rel="stylesheet" href="http://laurenancona.github.io/city-analytics/site/assets/css/main.css">
+  <link rel="stylesheet" href="../site/assets/css/main.css">
   
 
 </head>
@@ -48,8 +48,8 @@
 <!-- This demo uses the viewpicker component, which uses JavaScript promises.
 The promise.js script below polyfills promises in older browsers that don't
 support them. -->
-<script src="http://laurenancona.com/dashboards/examples/site/assets/js/promise.js"></script>
-<script src="http://laurenancona.com/dashboards/examples/site/components/viewpicker.js"></script>
+<script src="../site/assets/js/promise.js"></script>
+<script src="../site/components/viewpicker.js"></script>
 
 <script>
 gapi.analytics.ready(function() {
@@ -101,7 +101,8 @@ gapi.analytics.ready(function() {
     chart: {
       type: 'LINE',
       options: {
-        width: '100%'
+        width: '100%',
+        colors: ['red']
       }
     }
   };

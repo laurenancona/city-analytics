@@ -1,97 +1,133 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Embed API Demo</title>
+    <title>Embed API Demo</title>
+<link rel="stylesheet" href="../site/assets/css/main.css">
+
 </head>
+
 <body>
 
-<!-- Step 1: Create the containing elements. -->
+    <header class="Banner">
+      <h1 class="Banner-title">
+        <a href="/">Demo Dashboard</a>
+        <em>Multiple Views</em>
+      </h1>
+      <div class="Banner-auth" id="auth"></div>
+        <section id="auth-button"></section>    
+    </header>
 
-<section id="auth-button"></section>
-<section id="view-selector"></section>
-<section id="timeline"></section>
-<section id='singleMetric'><span class="value">0</span> <span class="label">SESSIONS</span></section>
+    <!-- Step 1: Create the containing elements. -->
 
-<!-- Step 2: Load the library. -->
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <div class="primary">
+    <section id="view-selector"></section>
+    <section id='singleMetric' class="singleMetric">
+        <div id="single1">
+          <span class="value">-</span>  
+        </div>
+        <div id="single2">
+          <span class="label">sessions</span>
+        </div>
+    </section>
+    <section id="timeline"></section>
+    </div>
 
-<script>
-(function(w,d,s,g,js,fjs){
-  g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(cb){this.q.push(cb)}};
-  js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];
-  js.src='https://apis.google.com/js/platform.js';
-  fjs.parentNode.insertBefore(js,fjs);js.onload=function(){g.load('analytics')};
-}(window,document,'script'));
-</script>
+    <!-- Step 2: Load the library. -->
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 
-<script>
-gapi.analytics.ready(function() {
+    <script>
+        (function (w, d, s, g, js, fjs) {
+            g = w.gapi || (w.gapi = {});
+            g.analytics = {
+                q: [],
+                ready: function (cb) {
+                    this.q.push(cb)
+                }
+            };
+            js = d.createElement(s);
+            fjs = d.getElementsByTagName(s)[0];
+            js.src = 'https://apis.google.com/js/platform.js';
+            fjs.parentNode.insertBefore(js, fjs);
+            js.onload = function () {
+                g.load('analytics')
+            };
+        }(window, document, 'script'));
+    </script>
 
-  // Step 3: Authorize the user.
+    <script>
+        gapi.analytics.ready(function () {
 
-  var CLIENT_ID = '1045492784533-ql9o89eua66i30ir48m9dr54gsu4psgn.apps.googleusercontent.com';
+            // Step 3: Authorize the user.
 
-  gapi.analytics.auth.authorize({
-    container: 'auth-button',
-    clientid: CLIENT_ID,
-  });
+            var CLIENT_ID = '1045492784533-ql9o89eua66i30ir48m9dr54gsu4psgn.apps.googleusercontent.com';
 
-  // Step 4: Create the view selector.
+            gapi.analytics.auth.authorize({
+                container: 'auth-button',
+                clientid: CLIENT_ID,
+            });
 
-  var viewSelector = new gapi.analytics.ViewSelector({
-    container: 'view-selector'
-  });
+            // Step 4: Create the view selector.
 
-  // Step 5: Create the timeline chart.
-  new gapi.analytics.report.Data({
-        query: {
-            'ids':'ga:92244058',
-            'dimensions': 'ga:sessionCount',
-            'metrics': 'ga:users',
-            'start-date': '7daysAgo',
-            'end-date': 'today',
-            'max-results': '1',
-        }
-    })
-    .once('success', function(response) {
-        debugger;
-        $('#singleMetric .value').text(response.totalResults);
-    })
-    .once('error', function(response) {
-        console.error('GA call failed', response.error);
-    })
-    .execute();
+            var viewSelector = new gapi.analytics.ViewSelector({
+                container: 'view-selector'
+            });
 
-  var timeline = new gapi.analytics.googleCharts.DataChart({
-    reportType: 'ga',
-    query: {
-      'dimensions': 'ga:sessionCount',
-      'metrics': 'ga:users',
-      'start-date': '7daysAgo',
-      'end-date': 'today',
-      'max-results': '10',
-    },
-    chart: {
-      type: 'LINE',
-      container: 'timeline'
-    }
-  });
+            // Step 5: Create the timeline chart.
+            new gapi.analytics.report.Data({
+                query: {
+                    'ids': 'ga:92244058',
+                    'dimensions': 'ga:sessionCount',
+                    'metrics': 'ga:users',
+                    'start-date': '7daysAgo',
+                    'end-date': 'today',
+                    'max-results': '1',
+                }
+            })
+                .once('success', function (response) {
+                    debugger;
+                    $('#singleMetric .value').text(response.totalResults);
+                })
+                .once('error', function (response) {
+                    console.error('GA call failed', response.error);
+                })
+                .execute();
 
-  // Step 6: Hook up the components to work together.
+            var timeline = new gapi.analytics.googleCharts.DataChart({
+                reportType: 'ga',
+                query: {
+                    'dimensions': 'ga:sessionCount',
+                    'metrics': 'ga:users',
+                    'start-date': '7daysAgo',
+                    'end-date': 'today',
+                    'max-results': '10',
+                },
+                chart: {
+                    type: 'LINE',
+                    container: 'timeline',
+                    options: {
+                        colors: ['#918A09'],
+                        fontName: 'montserratregular',
+                    }
+                }
+            });
 
-  gapi.analytics.auth.on('success', function(response) {
-    viewSelector.execute();
-  });
+            // Step 6: Hook up the components to work together.
 
-  viewSelector.on('change', function(ids) {
-    var newIds = {
-      query: {
-        ids: ids
-      }
-    }
-    timeline.set(newIds).execute();
-  });
-});
-</script>
+            gapi.analytics.auth.on('success', function (response) {
+                viewSelector.execute();
+            });
+
+            viewSelector.on('change', function (ids) {
+                var newIds = {
+                    query: {
+                        ids: ids
+                    }
+                }
+                timeline.set(newIds).execute();
+            });
+        });
+    </script>
 </body>
+
 </html>

@@ -1,9 +1,9 @@
 html {
-  background: #f4f2f0;
+  background: #fff;
 }
 body {
   color: #222;
-  font: 12px/1.4 'Open Sans', sans-serif;
+  font: 12px/1.4 'monserrateregular', sans-serif;
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
@@ -30,6 +30,10 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+.primary {
+ padding: 20px;   
 }
 
 /**
@@ -210,11 +214,11 @@ a:hover {
 
 .Chart {}
 .Chart-title {
-  font: 300 1.4em/1.2 sans-serif;
+  font: 300 1.4em/1.2 'montserratbold', sans-serif;
   margin: 0;
 }
 .Chart-subtitle {
-  font: 700 1.17em/1.2 sans-serif;
+  font: 700 1.17em/1.2 'montserratregular',sans-serif;
   margin: 0.5em 0 0;
 }
 .Chart-controls {
@@ -281,6 +285,69 @@ a:hover {
 .Viewpicker-item select:focus {
   border-color: #4d90fe;
   outline: 0;
+}
+
+/**
+*  UPDATED to accomodate new 'View Selector' nonsense from Google, 10/23/14
+*/
+
+
+
+.ViewSelector,
+.ViewSelector2 {
+  display: block
+}
+
+.ViewSelector2-item,
+/* For the old school view selector. */
+.ViewSelector table {
+  display: block;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.ViewSelector2-item > label,
+/* For the old school view selector. */
+.ViewSelector td:first-child {
+  font-weight: 700;
+  margin: 0 .25em .25em 0;
+  display: block;
+}
+
+.ViewSelector2-item > select {
+  width: 100%;
+}
+
+
+/*
+ * Additional hacks to get the native ViewSelector component (which uses
+ * closure widgets) to look like our custom ViewSelector extension.
+ */
+
+.ViewSelector table,
+.ViewSelector tbody,
+.ViewSelector tr,
+.ViewSelector td {
+  display: block;
+}
+
+.ViewSelector table {
+  height: auto!important;
+  width: auto!important;
+}
+
+.ViewSelector td {
+  width: auto!important;
+}
+
+.ViewSelector td:last-child * {
+  display: block;
+  text-align: left;
+}
+
+.ViewSelector td:last-child > div {
+  font-weight: 400;
+  margin: 0;
 }
 
 
@@ -441,18 +508,63 @@ a:hover {
  * Single Metrics
  */
 
-.Single {
+.singleMetric {
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+    background-color: #F2E205;
+    border: 1px dotted gray;
+    margin: 10px;
 }
-.Single-metric {
-    font-size: 2em;
-    font-family: 'georgia', serif;
+.value {
+    font-size: 4em;
+    font-family: 'montserratbold', sans-serif;
     color: #444;
     font-weight: 700;
+    
 }
-.Single-label {
-    font-size: 1em;
-    font-family: 'georgia', serif;
+.label {
+    font-size: 1.2em;
+    font-family: 'montserratregular', serif;
     text-transform: uppercase;
     color: #444;
 }
 
+single1 {
+    line-height: 1px;
+}
+
+single2 {
+
+}
+
+/**
+* Webfonts
+*/
+
+@font-face {
+    font-family: 'montserratbold';
+    src: url('fonts/montserrat-bold-webfont-webfont.eot');
+    src: url('fonts/montserrat-bold-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/montserrat-bold-webfont-webfont.woff2') format('woff2'),
+         url('fonts/montserrat-bold-webfont-webfont.woff') format('woff'),
+         url('fonts/montserrat-bold-webfont-webfont.ttf') format('truetype'),
+         url('fonts/montserrat-bold-webfont-webfont.svg#montserratbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('assets/fonts/montserrat-regular-webfont-webfont.eot');
+    src: url('assets/fonts/montserrat-regular-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/montserrat-regular-webfont-webfont.woff2') format('woff2'),
+         url('assets/fonts/montserrat-regular-webfont-webfont.woff') format('woff'),
+         url('assets/fonts/montserrat-regular-webfont-webfont.ttf') format('truetype'),
+         url('assets/fonts/montserrat-regular-webfont-webfont.svg#montserratregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Basic Dashboard &mdash; Embed API Demos</title>
   <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet'>
-  <link rel="stylesheet" href="../site/assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/main.css">
   
 
 </head>
@@ -20,12 +20,6 @@
 </header>
 
 <main>
-  <section class="Component Chart">
-    <h3 class="Chart-title"></h3>
-    <div class="Chart-subtitle">Last 7 days</div>
-    <div id="datachart"></div>
-    <div class="Chart-controls" id="viewpicker"></div>
-  </section>
 
   <section class="Component Chart">
     <h3 class="Chart-title">Users</h3>
@@ -48,10 +42,9 @@
 <!-- This demo uses the viewpicker component, which uses JavaScript promises.
 The promise.js script below polyfills promises in older browsers that don't
 support them. -->
-<script src="../site/assets/js/promise.js"></script>
-<script src="../site/components/viewpicker.js"></script>
-
-<script src="../site/components/active-users.js"></script>
+<script src="../assets/js/promise.js"></script>
+<script src="../components/viewpicker.js"></script>
+<script src="../components/active-users.js"></script>
 
 
 <script>
@@ -89,7 +82,7 @@ gapi.analytics.ready(function() {
    */
   var dataChart = new gapi.analytics.googleCharts.DataChart({
     query: {
-      'ids':'ids',
+      'ids': ids,
       'metrics': 'ga:sessions, ga:bounces',
       'dimensions': 'ga:date',
       'start-date': '7daysAgo',
