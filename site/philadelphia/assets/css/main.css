@@ -249,6 +249,7 @@ a:hover {
 .Legend > li {
   display: inline-block;
   padding: 1em 1em 0 0;
+  word-break : break-all;
 }
 .Legend > li > i {
   display: inline-block;

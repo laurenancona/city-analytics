@@ -1,28 +1,3 @@
-Skip to content
- This repository
-Explore
-Gist
-Blog
-Help
-Lauren Ancona laurenancona
-
-664  Watch
-  Star 12,700
- Fork 3,774nnnick/Chart.js
- branch: master  Chart.js/Chart.js
-chandruxpchandruxp on Aug 18, 2014 Fix for Almond AMD
-6 contributors Nick DownieAndy BurkeEsa-Matti SuuronenBrett BukowskiAnthon Pangchandruxp
-3380 lines (2878 sloc)  107.028 kb RawBlameHistory
-/*!
- * Chart.js
- * http://chartjs.org/
- * Version: 1.0.1-beta.4
- *
- * Copyright 2014 Nick Downie
- * Released under the MIT license
- * https://github.com/nnnick/Chart.js/blob/master/LICENSE.md
- */
-
 
 (function(){
 

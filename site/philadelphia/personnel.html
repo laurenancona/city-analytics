@@ -5,22 +5,22 @@
   <meta charset="utf-8">
   <title>Third-Party Visualizations &mdash; Embed API Demos</title>
   <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet'>
-  <link rel="stylesheet" href="../site/philadelphia/assets/css/main.css">
-  
+  <link rel="stylesheet" href="assets/css/main.css">
+
 
 </head>
 <body>
 
 <header class="Banner">
   <h1 class="Banner-title">
-    <a href="/">Phila.gov Test Analytics Dashboard</a>
-    <em>Chart.js Visualizations</em>
+    <a href="/">Phila.gov Analytics v0.0.1</a>
+    <em>HR/Personel</em>
   </h1>
-  <div class="Banner-auth" id="auth"></div>  
+  <div class="Banner-auth" id="auth"></div>
 </header>
 
 <main>
-  <section>
+  <section style="display:none">
     <div class="Component Viewpicker" id="viewpicker"></div>
     <div class="Component Realtime" id="realtime">
       <h1 class="Realtime-content">
@@ -185,8 +185,8 @@ function makeCanvas(id, opt_width, opt_height) {
   container.innerHTML = '';
   var canvas = document.createElement('canvas');
   var ctx = canvas.getContext('2d');
-  canvas.width = opt_width || 500;
-  canvas.height = opt_height || 300;
+  canvas.width = opt_width || 300;
+  canvas.height = opt_height || 200;
   container.appendChild(canvas);
   return ctx;
 }
@@ -215,7 +215,7 @@ function drawWeek(ids) {
   var now = moment() // .subtract('day', 2);
 
     var thisWeek = query({
-      'ids': ids,
+      'ids': 'ga:1482401',
       'dimensions': 'ga:date,ga:nthDay',
       'metrics': 'ga:sessions',
       'start-date': moment(now).subtract(1, 'day').day(0).format('YYYY-MM-DD'),
@@ -223,7 +223,7 @@ function drawWeek(ids) {
     });
 
     var lastWeek = query({
-      'ids': ids,
+      'ids': 'ga:1482401',
       'dimensions': 'ga:date,ga:nthDay',
       'metrics': 'ga:sessions',
       'start-date': moment(now).subtract(1, 'day').day(0).subtract(1, 'week')
@@ -292,7 +292,7 @@ function drawYear(ids) {
   var now = moment() // .subtract('day', 2);
 
     var thisYear = query({
-      'ids': ids,
+      'ids': 'ga:1482401',
       'dimensions': 'ga:month,ga:nthMonth',
       'metrics': 'ga:users',
       'start-date': moment(now).date(1).month(0).format('YYYY-MM-DD'),
@@ -300,7 +300,7 @@ function drawYear(ids) {
     });
 
     var lastYear = query({
-      'ids': ids,
+      'ids': 'ga:1482401',
       'dimensions': 'ga:month,ga:nthMonth',
       'metrics': 'ga:users',
       'start-date': moment(now).subtract(1, 'year').date(1).month(0)
@@ -312,8 +312,8 @@ function drawYear(ids) {
   Promise.all([thisYear, lastYear]).then(function(results) {
     var data1 = results[0].rows.map(function(row) { return +row[2]; });
     var data2 = results[1].rows.map(function(row) { return +row[2]; });
-    var labels = ['Jan','Feb','Mar','Apr','May','Jun',
-                  'Jul','Aug','Sep','Oct','Nov','Dec'];
+    var labels = ['J','F','M','A','M','J',
+                  'J','A','S','O','N','D'];
 
     var data = {
       labels : labels,
@@ -357,7 +357,7 @@ function drawYear(ids) {
 function drawBrowserStats(ids) {
 
   query({
-    'ids': ids,      
+    'ids': ids,
     'dimensions': 'ga:browser',
     'metrics': 'ga:sessions',
     'sort': '-ga:sessions',
@@ -387,7 +387,7 @@ function drawBrowserStats(ids) {
  */
 function drawDeviceUsage(ids) {
   query({
-    'ids': ids, 
+    'ids': ids,
     'dimensions': 'ga:deviceCategory',
     'metrics': 'ga:sessions',
   })

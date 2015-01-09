@@ -18,7 +18,7 @@
   <header class="Banner">
     <h1 class="Banner-title">
       <a href="/">Phila.gov Analytics v0.0.1</a>
-      <em>Test Dashboards: HTML/Polymer Components</em>
+      <em>Personnel</em>
     </h1>
     <ga-auth clientid="1045492784533-ql9o89eua66i30ir48m9dr54gsu4psgn.apps.googleusercontent.com"></gauth>
   </header>
@@ -28,7 +28,7 @@
     <section id="controls">
       <ga-viewpicker></ga-viewpicker>
       <ga-datepicker
-        startDate="365daysAgo"
+        startDate="30daysAgo"
         endDate="1daysAgo">
       </ga-datepicker>
     </section>
@@ -36,16 +36,17 @@
 <!-- BEGIN CHARTS -->
     <section id="charts">
       <ga-chart          
-        title="Sessions per Month"
-        type="COLUMN"
+        title="Sessions"
+        type="LINE"
+        ids="ga:1482401"
         metrics="ga:sessions"
-        dimensions="ga:nthMonth"
-        fields=rows,columnHeaders>
+        dimensions="ga:date">
       </ga-chart>
 
       <ga-chart
         title="Sessions (by country)"
         type="GEO"
+        ids="ga:1482401"
         metrics="ga:sessions"
         dimensions="ga:country">
       </ga-chart>
@@ -62,6 +63,7 @@
       <ga-chart
         title="Top Browsers"
         type="COLUMN"
+        ids="ga:1482401"
         metrics="ga:sessions"
         dimensions="ga:browser"
         sort="-ga:sessions"
@@ -71,6 +73,7 @@
       <ga-chart
         title="Top pages"
         type="TABLE"
+        ids="ga:1482401"
         metrics="ga:sessions"
         dimensions="ga:pagePath"
         sort="-ga:sessions"
@@ -80,6 +83,7 @@
       <ga-chart
         title="Mobile Devices"
         type="TABLE"
+        ids="ga:1482401"
         metrics="ga:sessions"
         dimensions="ga:pagePath"
         sort="-ga:sessions"
@@ -89,6 +93,7 @@
       <ga-chart
         title="OS / Hits"
         type="COLUMN"
+        ids="ga:1482401"
         metrics="ga:hits"
         dimensions="ga:operatingSystem"
         sort="-ga:hits"
@@ -97,6 +102,7 @@
       <ga-chart
         title="Medium"
         type="PIE"
+        ids="ga:1482401"
         metrics="ga:sessions"
         dimensions="ga:medium"
         maxResults="10">

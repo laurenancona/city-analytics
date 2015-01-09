@@ -81,9 +81,8 @@ support them. -->
 and moment.js to do some date processing. It also uses JavaScript
 promises, but since we're already loading a polyfill for that above,
 we don't need to do it again here. -->
-<script src="assets/js/chart.js"></script>
 <script src="assets/js/moment.js"></script>
-<script src="../site/assets/js/chart.js"></script>
+<script src="../site/philadelphia/assets/js/chart.js"></script>
 <script src="../site/assets/js/moment.js"></script>
 
 <!-- This demo uses the active-users component -->
@@ -246,17 +245,17 @@ function drawWeek(ids) {
       labels : labels,
       datasets : [
         {
-          fillColor : "#4D5360",
-          strokeColor : "rgba(151,187,205,1)",
-          pointColor : "rgba(151,187,205,1)",
-          pointStrokeColor : "#999",
+          fillColor : "rgba(11,55,70,.8)",
+          strokeColor : "rgba(138,145,149,.6)",
+          pointColor : "rgba(11,55,70,.8)",
+          pointStrokeColor : "#383838",
           data : data2
         },
         {
-          fillColor : "rgba(242,198,18,0.8)",
-          strokeColor : "rgba(138,145,149,1)",
-          pointColor : "rgba(151,187,205,1)",
-          pointStrokeColor : "#999",
+          fillColor : "rgba(168,191,18,.8)",
+          strokeColor : "rgba(138,145,149,.6)",
+          pointColor : "rgba(168,191,18,.8)",
+          pointStrokeColor : "#383838",
           data : data1
         }
       ]
@@ -270,11 +269,11 @@ function drawWeek(ids) {
 
     setLegend('legend1', [
       {
-        color: 'rgba(242,198,18,0.5)',
+        color: 'rgba(168,191,18,.8)',
         label: 'This Week'
       },
       {
-        color: '#4D5360',
+        color: 'rgba(11,55,70,.8)',
         label: 'Last Week'
       }
     ]);
@@ -319,13 +318,13 @@ function drawYear(ids) {
       labels : labels,
       datasets : [
         {
-          fillColor : "#4D5360",
-          strokeColor : "rgba(151,187,205,1)",
+          fillColor : "rgba(255,159,0,1)",
+          strokeColor : "rgba(138,145,149,.6)",
           data : data1
         },
         {
-          fillColor : "rgba(242,198,18,0.5)",
-          strokeColor : "rgba(138,145,149,1)",
+          fillColor : "rgba(11,55,70,.8)",
+          strokeColor : "rgba(138,145,149,.6)",
           data : data2
         }
       ]
@@ -338,11 +337,11 @@ function drawYear(ids) {
 
     setLegend('legend2', [
       {
-        color: '#4D5360',
+        color: 'rgba(255,159,0,1)',
         label: 'This Year'
       },
       {
-        color: 'rgba(242,198,18,0.5)',
+        color: 'rgba(11,55,70,.8)',
         label: 'Last Year'
       }
     ]);
@@ -366,7 +365,7 @@ function drawBrowserStats(ids) {
   .then(function(response) {
 
     var data = [];
-    var colors = ['#F2C612','#E2EAE9','#D4CCC5','#949FB1','#4D5360'].reverse();
+    var colors = ['#F2E205','#A8BF12','#FF9F00','#00AAB5','#0B3746'].reverse();
 
     response.rows.forEach(function(row, i) {
       data.push({ value: +row[1], color: colors[i], label: row[0] });
