@@ -1,0 +1,99 @@
+{
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "mayor",
+   "children": [
+    {
+     "name": "Economic Development",
+     "children": [
+        {"name": "Commerce", "size": 1},
+        {"name": "Historical Commision", "size": 1},
+        {"name": "Housing & Community Development", "size": 1},
+        {"name": "L & I", "size": 1},
+     ]
+    },
+    {
+     "name": "Managing Director (MDO)",
+     "children": [
+        {"name": "Fleet Management", "size": 1},
+        {"name": "Human Resources", "size": 1},
+        {"name": "OIT", "size": 1},
+        {"name": "Procurement", "size": 1},
+        {"name": "Public Property", "size": 1},
+        {"name": "Records", "size": 1},
+        {"name": "311", "size": 1},
+        {"name": "Animal Care & Control", "size": 1},
+        {"name": "Neighborhood Services", "size": 1},
+        {"name": "PhillyRising", "size": 1},
+        {"name": "PhillyStat", "size": 1}
+     ]
+    },
+    {
+     "name": "Parks & Recreation",
+     "children": [
+        {"name": "Free Library", "size": 1},
+        {"name": "Parks & Facilities", "size": 1},
+        {"name": "Recreation", "size": 1}
+     ]
+    },
+    {
+     "name": "Solicitor",
+     "children": [
+        {"name": "City Solicitor", "size": 1},
+        {"name": "Corporate & Tax Group", "size": 1},
+        {"name": "Human Services (DHS)", "size": 1},
+        {"name": "Litigation Group", "size": 1}
+     ]
+    },
+    {
+     "name": "Transportation & Public Utilities",
+     "children": [
+        {"name": "Airport (PHL)", "size": 1},
+        {"name": "Streets", "size": 1},
+        {"name": "Water", "size": 1},
+        {"name": "Parking Authority", "size": 1},
+        {"name": "PGW", "size": 1},
+        {"name": "Philadelphia Regional Port Authority", "size": 1},
+        {"name": "SEPTA", "size": 1}
+     ]
+    },
+    {
+     "name": "Finance",
+     "children": [
+        {"name": "Administrative Review", "size": 1},
+        {"name": "Assessment", "size": 1},
+        {"name": "Board of Pensions", "size": 1},
+        {"name": "Budget", "size": 1},
+        {"name": "Bureau of Administrative Adjudication", "size": 1},
+        {"name": "Revenue", "size": 1},
+        {"name": "Risk Management", "size": 1},
+        {"name": "Treasurer", "size": 1}
+     ]
+    },
+    {
+     "name": "Health & Opportunity",
+     "children": [
+        {"name": "Behavioral Health & Intellectual Disability Services", "size": 1},
+        {"name": "Dept of Human Services (DHS)", "size": 1},
+        {"name": "Health", "size": 1},
+        {"name": "Supportive Housing", "size": 1}
+     ]
+    },
+    {
+     "name": "Public Safety",
+     "children": [
+        {"name": "District Attorney", "size": 1},
+        {"name": "Sherriff", "size": 1},
+        {"name": "Emergency Management (OEM)", "size": 1},
+        {"name": "Fire", "size": 1},
+        {"name": "Police", "size": 1},
+        {"name": "Prison", "size": 1},
+        {"name": "RISE", "size": 1},
+        {"name": "1st Judicial District", "size": 1},
+        {"name": "Probation", "size": 1}
+     ]
+    }
+   ]
+  },
